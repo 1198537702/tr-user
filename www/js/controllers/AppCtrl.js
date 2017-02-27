@@ -1,7 +1,7 @@
  /**
  * Created by 黄炳乾 on 2017/2/25.
  */
-define([],function () {
+define(['app'],function (app) {
   'use strict';
 
   function ctrl($scope, $ionicModal, $timeout) {
@@ -44,6 +44,7 @@ define([],function () {
       }, 1000);
     };
   }
-  ctrl.$inject = ['$scope','$ionicModal','$timeout']
-  return ctrl;
+  ctrl.$inject = ['$scope','$ionicModal','$timeout'];
+  app.registerController('AppCtrl', ctrl);
+  // return ctrl;
 });

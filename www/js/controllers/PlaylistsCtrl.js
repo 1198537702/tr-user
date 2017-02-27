@@ -1,7 +1,7 @@
 /**
  * Created by 黄炳乾 on 2017/2/25.
  */
-define([], function () {
+define(['app'], function (app) {
   'use strict';
 
   function ctrl($scope) {
@@ -16,6 +16,7 @@ define([], function () {
   }
 
   ctrl.$inject = ['$scope'];
-  return ctrl;
+  app.registerController('PlaylistsCtrl', ctrl);
+  // return ctrl;
 
 })

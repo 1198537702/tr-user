@@ -1,43 +1,22 @@
-// Ionic Starter App
-
-// angular.module is a global place for creating, registering and retrieving Angular modules
-// 'starter' is the name of this angular module example (also set in a <body> attribute in index.html)
-// the 2nd parameter is an array of 'requires'
-// 'starter.controllers' is found in controllers.js
-define(['controllers/controllers'], function () {
+/**
+ * Created by 黄炳乾 on 2017/2/27.
+ */
+define(['app'], function (app) {
   'use strict';
-
-  var app = angular.module('starter', ['ionic', 'starter.controllers']);
-
-  app.run(function($ionicPlatform) {
-    $ionicPlatform.ready(function() {
-      // Hide the accessory bar by default (remove this to show the accessory bar above the keyboard
-      // for form inputs)
-      if (window.cordova && window.cordova.plugins.Keyboard) {
-        cordova.plugins.Keyboard.hideKeyboardAccessoryBar(true);
-        cordova.plugins.Keyboard.disableScroll(true);
-
-      }
-      if (window.StatusBar) {
-        // org.apache.cordova.statusbar required
-        StatusBar.styleDefault();
-      }
-    });
-  })
-  .config(function($stateProvider, $urlRouterProvider,$controllerProvider) {
+    return function($stateProvider, $urlRouterProvider, $controllerProvider) {
     app.registerController = $controllerProvider.register;
-    app.loadControllerJs = function(controllerJs){
-      return function($rootScope, $q){
-        var def = $q.defer(),deps=[];
-        angular.isArray(controllerJs) ? (deps = controllerJs) : deps.push(controllerJs);
-        require(deps,function(){
-          $rootScope.$apply(function(){
-            def.resolve();
+      app.loadControllerJs = function (controllerJs) {
+        return function ($rootScope, $q) {
+          var def = $q.defer, deps = [];
+          angular.isArray(controllerJs) ? (deps = controllerJs) : deps.push(controllerJs);
+          require(deps, function () {
+            $rootScope.$apply(function () {
+              def.resolve();
+            });
           });
-        });
-        return def.promise;
+          return def.promise;
+        }
       };
-    }
     $stateProvider
 
     .state('app', {
@@ -96,7 +75,6 @@ define(['controllers/controllers'], function () {
     });
     // if none of the above states are matched, use this as the fallback
     $urlRouterProvider.otherwise('/app/playlists');
-  });
+  };
 
-  return app;
 });

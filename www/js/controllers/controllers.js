@@ -1,10 +1,11 @@
 
 define(function (require) {
   'use strict';
-    var controllers = angular.module('starter.controllers', [])
-    controllers.controller('PlaylistCtrl', require('controllers/PlaylistCtrl'));
-    controllers.controller('PlaylistsCtrl', require('controllers/PlaylistsCtrl'));
-    controllers.controller('AppCtrl', require('controllers/AppCtrl'));
+    var controllers = angular.module('starter.controllers', []);
+    // controllers.controller('PlaylistCtrl', require('controllers/PlaylistCtrl'));
+    // controllers.controller('PlaylistsCtrl', require('controllers/PlaylistsCtrl'));
+    // controllers.controller('AppCtrl', require('controllers/AppCtrl'));
+  return controllers;
 });
 
 

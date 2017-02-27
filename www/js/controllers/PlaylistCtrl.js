@@ -1,11 +1,12 @@
 /**
  * Created by 黄炳乾 on 2017/2/25.
  */
-define([],function () {
+define(['app'],function (app) {
     'use strict';
 
   function ctrl($scope, $stateParams) {
   }
   ctrl.$inject = ['$scope', '$stateParams'];
-  return ctrl;
+  app.registerController('PlaylistCtrl', ctrl);
+  // return ctrl;
 });
