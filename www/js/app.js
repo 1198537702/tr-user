@@ -40,39 +40,32 @@ define(['controllers/controllers'], function () {
     }
     $stateProvider
 
-    .state('app', {
-      url: '/app',
+    .state('tabs', {
+      url: '/tabs',
       abstract: true,
-      templateUrl: 'templates/menu.html',
+      templateUrl: 'templates/tabs.html',
       controller: 'AppCtrl',
       resolve:{
         deps: app.loadControllerJs('./controllers/AppCtrl')
       }
     })
-
-    .state('app.search', {
-      url: '/search',
-      views: {
-        'menuContent': {
-          templateUrl: 'templates/search.html'
-        }
-      }
-    })
-
-    .state('app.browse', {
-        url: '/browse',
+    .state('tabs.callCar', {
+        url: '/callCar',
         views: {
-          'menuContent': {
-            templateUrl: 'templates/browse.html'
+          'callCar': {
+            templateUrl: 'templates/callCar.html',
+            controller: 'PlaylistsCtrl',
+            resolve:{
+              deps: app.loadControllerJs('./controllers/PlaylistsCtrl')
+            }
           }
         }
       })
-
-    .state('app.playlists', {
-        url: '/playlists',
+    .state('tabs.map', {
+        url: '/callCar/map',
         views: {
-          'menuContent': {
-            templateUrl: 'templates/playlists.html',
+          'callCar': {
+            templateUrl: 'templates/map.html',
             controller: 'PlaylistsCtrl',
             resolve:{
               deps: app.loadControllerJs('./controllers/PlaylistsCtrl')
@@ -81,7 +74,26 @@ define(['controllers/controllers'], function () {
         }
       })
 
-    .state('app.single', {
+    .state('tabs.search', {
+      url: '/search',
+      views: {
+        'menuContent': {
+          templateUrl: 'templates/search.html'
+        }
+      }
+    })
+
+    .state('tabs.browse', {
+        url: '/browse',
+        views: {
+          'menuContent': {
+            templateUrl: 'templates/browse.html'
+          }
+        }
+      })
+
+
+    .state('tabs.single', {
       url: '/playlists/:playlistId',
       views: {
         'menuContent': {
@@ -95,7 +107,7 @@ define(['controllers/controllers'], function () {
       }
     });
     // if none of the above states are matched, use this as the fallback
-    $urlRouterProvider.otherwise('/app/playlists');
+    $urlRouterProvider.otherwise('/tabs/callCar');
   });
 
   return app;

@@ -1,1 +1,26 @@
 /* Empty. Add your own CSS if you like */
+.callCar{
+  background-color: #ececec;
+  margin-top: 0;
+  height: 100%;
+  padding-top: 15px;
+}
+.callCar-dt{
+  margin-bottom: 15px;
+}
+.callCar-timg{
+  width: 26px;
+}
+.callCar .button-balanced{
+  position: absolute;
+  left: 50%;
+  width: 180px;
+  margin-left: -90px;
+  height: 35px;
+  font-size: 14px;
+}
+.callCar .button-outline{
+  border: none;
+  width: 50%;
+  text-align: left;
+}
