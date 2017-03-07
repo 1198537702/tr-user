@@ -1,12 +1,14 @@
 /* Empty. Add your own CSS if you like */
-.callCar{
+.nav-bar{
+ background-color: #fcfcfc;
+}
+ion-content{
   background-color: #ececec;
-  margin-top: 0;
-  height: 100%;
   padding-top: 15px;
+  overflow: hidden;
 }
 .callCar-dt{
-  margin-bottom: 15px;
+  margin-top: 15px;
 }
 .callCar-timg{
   width: 26px;
@@ -23,4 +25,30 @@
   border: none;
   width: 50%;
   text-align: left;
+}
+.remark .content{
+  width: 95%;
+  margin: 10px auto;
+  background-color: #ffffff;
+  height: 100px;
+  border: 1px solid #c4c4c4;
+  padding: 5px 8px;
+  position: relative;
+}
+.remark .button-balanced{
+  width: 60%;
+  margin-left: 20%;
+  font-size: 14px;
+
+}
+.remark .button-stable{
+  position: absolute;
+  right: 0;
+  font-size: 14px;
+
+  bottom: -3px;
+}
+.order .tabs{
+  height: 30px;
+  line-height: 30px;
 }

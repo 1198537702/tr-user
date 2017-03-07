@@ -24,7 +24,20 @@ define(['controllers/controllers'], function () {
       }
     });
   })
-  .config(function($stateProvider, $urlRouterProvider,$controllerProvider) {
+  .config(function($stateProvider, $urlRouterProvider, $controllerProvider, $ionicConfigProvider) {
+      // $ionicConfigProvider.platform.ios.tabs.style('standard');
+      // $ionicConfigProvider.platform.ios.tabs.position('bottom');
+      $ionicConfigProvider.platform.android.tabs.style('standard');
+      $ionicConfigProvider.platform.android.tabs.position('standard');
+
+      $ionicConfigProvider.platform.android.navBar.alignTitle('center');
+
+      $ionicConfigProvider.platform.ios.backButton.previousTitleText('').icon('ion-ios-arrow-thin-left');
+      $ionicConfigProvider.platform.android.backButton.previousTitleText('').icon('ion-android-arrow-back');
+
+      $ionicConfigProvider.platform.ios.views.transition('ios');
+      $ionicConfigProvider.platform.android.views.transition('android');
+
     app.registerController = $controllerProvider.register;
     app.loadControllerJs = function(controllerJs){
       return function($rootScope, $q){
@@ -37,7 +50,7 @@ define(['controllers/controllers'], function () {
         });
         return def.promise;
       };
-    }
+    };
     $stateProvider
 
     .state('tabs', {
@@ -61,6 +74,20 @@ define(['controllers/controllers'], function () {
           }
         }
       })
+
+    .state('tabs.order', {
+        url: '/order',
+        views: {
+          'order': {
+            templateUrl: 'templates/order.html',
+            controller: 'PlaylistsCtrl',
+            resolve:{
+              deps: app.loadControllerJs('./controllers/PlaylistsCtrl')
+            }
+          }
+        }
+      })
+
     .state('tabs.map', {
         url: '/callCar/map',
         views: {
@@ -73,6 +100,20 @@ define(['controllers/controllers'], function () {
           }
         }
       })
+
+    .state('tabs.remark', {
+        url: '/callCar/remark',
+        views: {
+          'callCar': {
+            templateUrl: 'templates/remark.html',
+            controller: 'PlaylistsCtrl',
+            resolve:{
+              deps: app.loadControllerJs('./controllers/PlaylistsCtrl')
+            }
+          }
+        }
+      })
+
 
     .state('tabs.search', {
       url: '/search',

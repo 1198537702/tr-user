@@ -19,4 +19,4 @@ define(['app'], function (app) {
   app.registerController('PlaylistsCtrl', ctrl);
   // return ctrl;
 
-})
+});
