@@ -75,19 +75,6 @@ define(['controllers/controllers'], function () {
         }
       })
 
-    .state('tabs.order', {
-        url: '/order',
-        views: {
-          'order': {
-            templateUrl: 'templates/order.html',
-            controller: 'PlaylistsCtrl',
-            resolve:{
-              deps: app.loadControllerJs('./controllers/PlaylistsCtrl')
-            }
-          }
-        }
-      })
-
     .state('tabs.map', {
         url: '/callCar/map',
         views: {
@@ -106,6 +93,44 @@ define(['controllers/controllers'], function () {
         views: {
           'callCar': {
             templateUrl: 'templates/remark.html',
+            controller: 'PlaylistsCtrl',
+            resolve:{
+              deps: app.loadControllerJs('./controllers/PlaylistsCtrl')
+            }
+          }
+        }
+      })
+
+    .state('tabs.order', {
+        url: '/order',
+        views: {
+          'order': {
+            templateUrl: 'templates/order.html',
+            controller: 'PlaylistsCtrl',
+            resolve:{
+              deps: app.loadControllerJs('./controllers/PlaylistsCtrl')
+            }
+          }
+        }
+      })
+    .state('tabs.order-detail', {
+        url: '/order/detail',
+        views: {
+          'order': {
+            templateUrl: 'templates/order-detail.html',
+            controller: 'PlaylistsCtrl',
+            resolve:{
+              deps: app.loadControllerJs('./controllers/PlaylistsCtrl')
+            }
+          }
+        }
+      })
+
+    .state('tabs.me', {
+        url: '/me',
+        views: {
+          'me': {
+            templateUrl: 'templates/me.html',
             controller: 'PlaylistsCtrl',
             resolve:{
               deps: app.loadControllerJs('./controllers/PlaylistsCtrl')
