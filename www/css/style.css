@@ -40,6 +40,47 @@ a{text-decoration:none}
   width: 100%;
   margin-right: 10px;
 }
+.map #container{
+  height: 100%;
+  width: 100%;
+}
+.map #keyword{
+  width: 100%;
+}
+.map .item-input-inset{
+  padding: 0 10px;
+  background-color: #f5f5f5;
+}
+.type .item{
+  padding: 10px 10px;
+  height: 110px;
+  position: relative;
+  margin: 5px ;
+}
+.type img{
+  width: auto;
+  height: 50px;
+  display: inline-block;
+  position: absolute;
+  top: 50%;
+  margin-top: -25px;
+}
+.type .info{
+  display: inline-block;
+  margin-left: 105px;
+  font-size: 13px;
+  color: #727272;
+  line-height: 20px;
+}
+.type .name{
+  color: #387ef5;
+  font-size: 16px;
+  line-height: 25px;
+}
+.type .price{
+  color: #ff3e00;
+  font-size: 16px;
+}
 .remark .content{
   width: 95%;
   margin: 10px auto;
@@ -117,7 +158,7 @@ a{text-decoration:none}
   font-size: 20px;
 }
 .order-detail .driver span{
-  font-size: 14px;
+  font-size: 15px;
   color: #8f8f8f;
 }
 .order-detail .ion-ios-telephone{
@@ -154,12 +195,13 @@ a{text-decoration:none}
   border-radius: 3px;
   height: 80px;
   margin-bottom: 10px;
+  background-color: #f8f8f8;
 }
 .order-detail .content .button{
   position: absolute;
   right: 0;
   font-size: 14px;
-  bottom: -3px;
+  bottom: -5px;
 }
 .me img{
   height: 66px;

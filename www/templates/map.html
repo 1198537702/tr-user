@@ -1,7 +1,16 @@
-<ion-view view-title="map">
-  <ion-content class="padding">
-    <p>
-      map
-    </p>
-  </ion-content>
+<ion-view view-title="map" class="map">
+
+    <ion-content scroll="false">
+        <div class="item-input-inset">
+            <label class="item-input-wrapper">
+                <i class="icon ion-ios-search placeholder-icon"></i>
+                <input id="keyword" type="search" placeholder="输入地址">
+            </label>
+            <button class="button button-clear button-positive">
+                确定
+            </button>
+        </div>
+
+        <div id="container"></div>
+    </ion-content>
 </ion-view>

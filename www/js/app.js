@@ -74,15 +74,27 @@ define(['controllers/controllers'], function () {
           }
         }
       })
-
-    .state('tabs.map', {
-        url: '/callCar/map',
+    .state('tabs.place', {
+        url: '/callCar/place',
         views: {
           'callCar': {
-            templateUrl: 'templates/map.html',
+            templateUrl: 'templates/place.html',
             controller: 'PlaylistsCtrl',
             resolve:{
               deps: app.loadControllerJs('./controllers/PlaylistsCtrl')
+            }
+          }
+        }
+      })
+
+    .state('tabs.map', {
+        url: '/callCar/place/map',
+        views: {
+          'callCar': {
+            templateUrl: 'templates/map.html',
+            controller: 'MapCtrl',
+            resolve:{
+              deps: app.loadControllerJs('./controllers/MapCtrl')
             }
           }
         }
@@ -93,6 +105,31 @@ define(['controllers/controllers'], function () {
         views: {
           'callCar': {
             templateUrl: 'templates/remark.html',
+            controller: 'PlaylistsCtrl',
+            resolve:{
+              deps: app.loadControllerJs('./controllers/PlaylistsCtrl')
+            }
+          }
+        }
+      })
+
+    .state('tabs.type', {
+        url: '/callCar/type',
+        views: {
+          'callCar': {
+            templateUrl: 'templates/carType.html',
+            controller: 'PlaylistsCtrl',
+            resolve:{
+              deps: app.loadControllerJs('./controllers/PlaylistsCtrl')
+            }
+          }
+        }
+      })
+    .state('tabs.additionalDemand', {
+        url: '/callCar/additionalDemand',
+        views: {
+          'callCar': {
+            templateUrl: 'templates/additionalDemand.html',
             controller: 'PlaylistsCtrl',
             resolve:{
               deps: app.loadControllerJs('./controllers/PlaylistsCtrl')
