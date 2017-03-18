@@ -4,11 +4,11 @@
         <div class="item-input-inset">
             <label class="item-input-wrapper">
                 <i class="icon ion-ios-search placeholder-icon"></i>
-                <input id="keyword" type="search" placeholder="输入地址">
+                <input id="keyword" type="search" ng-model="start.p" placeholder="输入地址">
             </label>
-            <button class="button button-clear button-positive">
+            <a class="button button-clear button-positive" href="#/tabs/callCar/place/{{ place }}" ng-click="sub2()">
                 确定
-            </button>
+            </a>
         </div>
 
         <div id="container"></div>

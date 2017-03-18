@@ -12,16 +12,16 @@
                 <span class="item-title">
                     起点：
                 </span>
-                <a class="button button-outline button-dark button-small" href="#/tabs/callCar/place">
-                    那那那
+                <a class="button button-outline button-dark button-small" href="#/tabs/callCar/place/start">
+                    {{ $root.newOrder.start.p }}
                 </a>
             </div>
             <div class="item item-input">
                 <span class="item-title">
                     终点：
                 </span>
-                <a class="button button-outline button-dark button-small" href="#/tabs/callCar/place">
-                    哪哪哪哪哪
+                <a class="button button-outline button-dark button-small" href="#/tabs/callCar/place/end">
+                    {{ $root.newOrder.end.p }}
                 </a>
             </div>
 
@@ -31,7 +31,7 @@
                     需要车型：
                 </div>
                 <a class="button button-outline button-dark button-small" href="#tabs/callCar/type">
-                    哪哪哪哪哪
+                    {{ $root.newOrder.carType }}
                 </a>
             </div>
             <div class="item item-input">
@@ -40,7 +40,6 @@
                     额外要求：
                 </div>
                 <a class="button button-outline button-dark button-small" href="#tabs/callCar/additionalDemand">
-                    xxxx
                 </a>
             </div>
             <div class="item item-input">
@@ -49,7 +48,7 @@
                     备注：
                 </div>
                 <a class="button button-outline button-dark button-small" href="#/tabs/callCar/remark">
-                    啥啥啥
+                    {{ $root.newOrder.remark }}
                 </a>
             </div>
 

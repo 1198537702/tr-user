@@ -90,6 +90,11 @@ a{text-decoration:none}
   padding: 5px 8px;
   position: relative;
 }
+.remark textarea{
+  height: 100%;
+  width: 100%;
+  resize: none;
+}
 .remark .button-balanced{
   width: 60%;
   margin-left: 20%;

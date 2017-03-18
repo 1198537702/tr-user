@@ -4,7 +4,26 @@
 define(['app', 'maps'], function (app, maps) {
   'use strict';
 
-  function ctrl($scope, maps) {
+  function ctrl($scope, $rootScope, $state, $stateParams, maps) {
+
+    $scope.place = $stateParams.place;
+
+    if ($stateParams.place == 'start') {
+      $scope.start = angular.copy($rootScope.newOrder.start);
+
+      $scope.sub2 = function () {
+        $rootScope.newOrder.start.p = angular.copy($scope.start.p);
+      };
+
+    } else if ($stateParams.place == 'end') {
+      $scope.start = angular.copy($rootScope.newOrder.end);
+
+      $scope.sub2 = function () {
+        $rootScope.newOrder.end.p = angular.copy($scope.start.p);
+      };
+
+    }
+
     var map = new AMap.Map('container', {
       resizeEnable: true,
       zoom: 13//地图显示的缩放级别
@@ -27,9 +46,10 @@ define(['app', 'maps'], function (app, maps) {
       });
     });
 
+
   }
 
-  ctrl.$inject = ['$scope'];
+  ctrl.$inject = ['$scope', '$rootScope', '$state', '$stateParams'];
   app.registerController('MapCtrl', ctrl);
   // return ctrl;
 

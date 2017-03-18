@@ -1,19 +1,19 @@
-<ion-view view-title="map">
+<ion-view view-title="地址">
     <ion-content class="callCar" scroll="false">
         <div class="item item-input callCar-dt">
                 <span class="item-title">
                     定位：
                 </span>
-            <a class="button button-outline button-dark button-small" href="#/tabs/callCar/place/map">
-                那那那
+            <a class="button button-outline button-dark button-small" href="#/tabs/callCar/map/{{ place }}" ng-click="next()">
+                {{ start.p }}
             </a>
         </div>
         <div class="item item-input">
             <span class="item-title">
                 详细地址：
             </span>
-            <input type="text" placeholder="如门牌号"></div>
-        <button class="button button-small button-balanced callCar-dt">
+            <input ng-model="start.dp" type="text" placeholder="{{ start.dp }}"></div>
+        <button class="button button-small button-balanced callCar-dt" ng-click="sub()">
             确 定
         </button>
     </ion-content>

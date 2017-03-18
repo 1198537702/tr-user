@@ -7,7 +7,7 @@
 define(['controllers/controllers'], function () {
   'use strict';
 
-  var app = angular.module('starter', ['ionic', 'starter.controllers']);
+  var app = angular.module('starter', ['ionic', 'starter.controllers', 'starter.services']);
 
   app.run(function($ionicPlatform) {
     $ionicPlatform.ready(function() {
@@ -69,26 +69,26 @@ define(['controllers/controllers'], function () {
             templateUrl: 'templates/callCar.html',
             controller: 'PlaylistsCtrl',
             resolve:{
-              deps: app.loadControllerJs('./controllers/PlaylistsCtrl')
+              deps: app.loadControllerJs('./controllers/CallCarCtrl')
             }
           }
         }
       })
     .state('tabs.place', {
-        url: '/callCar/place',
+        url: '/callCar/place/:place',
         views: {
           'callCar': {
             templateUrl: 'templates/place.html',
-            controller: 'PlaylistsCtrl',
+            controller: 'PlaceCtrl',
             resolve:{
-              deps: app.loadControllerJs('./controllers/PlaylistsCtrl')
+              deps: app.loadControllerJs('./controllers/PlaceCtrl')
             }
           }
         }
       })
 
     .state('tabs.map', {
-        url: '/callCar/place/map',
+        url: '/callCar/map/:place',
         views: {
           'callCar': {
             templateUrl: 'templates/map.html',
@@ -105,9 +105,9 @@ define(['controllers/controllers'], function () {
         views: {
           'callCar': {
             templateUrl: 'templates/remark.html',
-            controller: 'PlaylistsCtrl',
+            controller: 'RemarkCtrl',
             resolve:{
-              deps: app.loadControllerJs('./controllers/PlaylistsCtrl')
+              deps: app.loadControllerJs('./controllers/RemarkCtrl')
             }
           }
         }
@@ -118,9 +118,9 @@ define(['controllers/controllers'], function () {
         views: {
           'callCar': {
             templateUrl: 'templates/carType.html',
-            controller: 'PlaylistsCtrl',
+            controller: 'CarTypeCtrl',
             resolve:{
-              deps: app.loadControllerJs('./controllers/PlaylistsCtrl')
+              deps: app.loadControllerJs('./controllers/CarTypeCtrl')
             }
           }
         }
@@ -130,9 +130,9 @@ define(['controllers/controllers'], function () {
         views: {
           'callCar': {
             templateUrl: 'templates/additionalDemand.html',
-            controller: 'PlaylistsCtrl',
+            controller: 'ADCtrl',
             resolve:{
-              deps: app.loadControllerJs('./controllers/PlaylistsCtrl')
+              deps: app.loadControllerJs('./controllers/ADCtrl')
             }
           }
         }
@@ -143,9 +143,9 @@ define(['controllers/controllers'], function () {
         views: {
           'order': {
             templateUrl: 'templates/order.html',
-            controller: 'PlaylistsCtrl',
+            controller: 'OrderCtrl',
             resolve:{
-              deps: app.loadControllerJs('./controllers/PlaylistsCtrl')
+              deps: app.loadControllerJs('./controllers/OrderCtrl')
             }
           }
         }

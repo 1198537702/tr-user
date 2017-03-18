@@ -5,6 +5,8 @@ define(function (require) {
     // controllers.controller('PlaylistCtrl', require('controllers/PlaylistCtrl'));
     // controllers.controller('PlaylistsCtrl', require('controllers/PlaylistsCtrl'));
     // controllers.controller('AppCtrl', require('controllers/AppCtrl'));
+    var services = angular.module('starter.services', []);
+
   return controllers;
 });
 

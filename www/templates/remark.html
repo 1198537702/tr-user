@@ -1,12 +1,12 @@
 <ion-view view-title="备注">
     <ion-content class="remark" scroll="false">
-        <div class="content" contenteditable="true">
-            wefwf
-            <button class="button button-clear button-stable">
+        <div class="content">
+            <textarea id="remark"></textarea>
+            <button ng-click="cleartext()" contenteditable="false" class="button button-clear button-stable" >
                 清空
             </button>
         </div>
-        <button class="button button-small button-balanced">
+        <button class="button button-small button-balanced" ng-click="sub()">
             提 交
         </button>
 
