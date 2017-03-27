@@ -1,0 +1,92 @@
+<ion-view view-title="订单确认" class="order-confirm">
+
+    <ion-content>
+
+        <ion-item>
+            <div class="route">
+                <span class="">
+                    起点：
+                </span>
+                <span>
+                        {{ $root.newOrder.start.dp }}
+                    </span>
+                <div></div>
+                <span class="">
+                        终点：
+                    </span>
+                <span>
+                        {{ $root.newOrder.end.dp }}
+                </span>
+                <div></div>
+                <span class="">
+                        时间：
+                    </span>
+                <span>
+                        {{ $root.newOrder.time }}
+                </span>
+                <div></div>
+                <span class="">
+                        车型：
+                    </span>
+                <span>
+                        {{ $root.newOrder.carType }}
+                </span>
+                <div></div>
+                <span class="">
+                        额外需求：
+                    </span>
+                <span>
+                        {{ ad }}
+                </span>
+                <div></div>
+                <span>
+                        备注：
+                    </span>
+                <span class="remark">
+                        {{ $root.newOrder.remark }}
+                </span>
+            </div>
+            <div class="cost">
+                <span class="num">{{ $root.newOrder.pay }}</span>
+                <span>元</span>
+            </div>
+
+        </ion-item>
+        <div id="container">
+
+        </div>
+
+        <ion-checkbox class="item-checkbox-right checkbox-stable">优先发送订单给我的司机</ion-checkbox>
+        <ion-item class="">
+            <span class="">
+                联系人信息：
+            </span>
+            <div class="info">
+                <div class="myitem">
+                    <span class="">
+                    <i class="icon ion-android-person"></i>
+
+                    姓名：
+                    </span>
+                    <input type="text" placeholder="输入" ng-model="contacts.name">
+
+                </div>
+
+                <div class="myitem">
+                    <span class="">
+                        <i class="icon ion-android-phone-portrait"></i>
+
+                        手机号：
+                    </span>
+                    <input type="text" placeholder="输入" ng-model="contacts.tell">
+
+                </div>
+
+            </div>
+        </ion-item>
+        <button class="button button-small button-balanced callCar-dt" ng-click="sub()">
+            确 认 下 单
+        </button>
+
+    </ion-content>
+</ion-view>

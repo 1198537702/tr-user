@@ -1,12 +1,12 @@
 <ion-view view-title="下单叫车">
     <ion-content class="callCar" scroll="false">
-            <div class="item item-input item-select callCar-dt">
+            <div class="item item-input callCar-dt">
                 <img class="callCar-timg" src="../img/timg.png">
 
                 <div class="item-title">
                     用车时间：
                 </div>
-                <input type="datetime">
+                <input type="datetime-local" ng-model="time">
             </div>
             <div class="item item-input callCar-dt">
                 <span class="item-title">
@@ -52,7 +52,7 @@
                 </a>
             </div>
 
-        <button class="button button-small button-balanced callCar-dt">
+        <button class="button button-small button-balanced callCar-dt" ng-click="sub()">
             提 交
         </button>
 

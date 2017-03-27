@@ -1,13 +1,10 @@
 <ion-view view-title="我">
     <ion-content class="me"  scroll="false">
-        <ion-item class="callCar-dt">
+        <ion-item class="callCar-dt" ng-click="login()">
             <img src="../img/user.png">
             <div class="user">
-                <span>
-                    黄炳乾
-                </span>
                 <p>
-                    13588275019
+                    {{ tell }}
                 </p>
             </div>
         </ion-item>
@@ -20,7 +17,7 @@
         <ion-item class="iitem">
             <span>我的司机</span>
         </ion-item>
-        <ion-item class="iitem">
+        <ion-item class="iitem" ng-click="logout()">
             <span>退出登录</span>
         </ion-item>
     </ion-content>

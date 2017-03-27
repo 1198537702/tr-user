@@ -1,4 +1,4 @@
-<ion-view view-title="订单详情" class="order-detail">
+<ion-view view-title="订单详情" class="order-detail orderInProgress">
 
     <ion-content  scroll="false">
         <ion-item class="callCar-dt">
@@ -43,28 +43,8 @@
                 </div>
 
         </ion-item>
-        <ion-item class="paddingtop">
-                    <span class="">
-                        评价：
-                    </span>
-                <div class="stars">
-                    <a id="1" class="button button-icon ion-android-star"></a>
-                    <a id="2" class="button button-icon ion-android-star"></a>
-                    <a id="3" class="button button-icon ion-android-star"></a>
-                    <a id="4" class="button button-icon ion-android-star"></a>
-                    <a id="5" class="button button-icon ion-android-star"></a>
-                </div>
-                <div class="content" contenteditable="true">
-                    <textarea id="evaluation"></textarea>
-                    <button class="button button-clear button-stable" ng-click="cleartext()">
-                        清空
-                    </button>
-                </div>
+        <div id="container">
 
-        </ion-item>
-                <button class="button button-small button-balanced button-sub" ng-click="sub()">
-            提 交
-        </button>
-
+        </div>
     </ion-content>
 </ion-view>

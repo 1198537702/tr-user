@@ -1,28 +1,30 @@
 /**
  * Created by 黄炳乾 on 2017/2/25.
  */
-define(['app', 'maps'], function (app, maps) {
+define(['app'], function (app) {
   'use strict';
 
-  function ctrl($scope, $rootScope, $state, $stateParams, maps) {
+  function ctrl($scope, $rootScope, $stateParams) {
+    $scope.$on("$ionicView.beforeEnter", function () {
 
-    $scope.place = $stateParams.place;
+      $scope.place = $stateParams.params.place;
 
-    if ($stateParams.place == 'start') {
-      $scope.start = angular.copy($rootScope.newOrder.start);
+      if ($stateParams.params.place == 'start') {
+        $scope.start = angular.copy($rootScope.newOrder.start);
 
-      $scope.sub2 = function () {
-        $rootScope.newOrder.start.p = angular.copy($scope.start.p);
-      };
+        $scope.sub2 = function () {
+          $rootScope.newOrder.start.p = angular.copy($scope.start.p);
+        };
 
-    } else if ($stateParams.place == 'end') {
-      $scope.start = angular.copy($rootScope.newOrder.end);
+      } else if ($stateParams.params.place == 'end') {
+        $scope.start = angular.copy($rootScope.newOrder.end);
 
-      $scope.sub2 = function () {
-        $rootScope.newOrder.end.p = angular.copy($scope.start.p);
-      };
+        $scope.sub2 = function () {
+          $rootScope.newOrder.end.p = angular.copy($scope.start.p);
+        };
 
-    }
+      }
+    });
 
     var map = new AMap.Map('container', {
       resizeEnable: true,
@@ -37,7 +39,7 @@ define(['app', 'maps'], function (app, maps) {
       };
       var autocomplete = new AMap.Autocomplete(autoOptions);
       var placeSearch = new AMap.PlaceSearch({
-        city: '北京',
+        city: '杭州',
         map: map
       });
       AMap.event.addListener(autocomplete, "select", function (e) {

@@ -3,4 +3,5 @@ define(function (require) {
   var services = angular.module('starter.services',[]);
 
   services.factory('Chats', require('services/ChatsService'));
+  services.factory('Tool', require('services/ToolService'));
 });

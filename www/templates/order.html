@@ -1,46 +1,44 @@
 <ion-view view-title="订单" class="order">
     <div class="tabs tabs-striped tabs-top tabs-color-positive">
-        <a class="active tab-item">
+        <a id="notfinish" class="active tab-item" ng-click="turnTabs('finish','notfinish')">
             进行中
         </a>
-        <a class="tab-item">
+        <a id="finish" class="tab-item" ng-click="turnTabs('notfinish','finish')">
             已完成
-        </a>
-        <a class="tab-item">
-            已取消
         </a>
     </div>
 
     <ion-content>
 
         <ion-list>
-            <ion-item>
-                <a href="#tabs/order/detail">
+            <ion-item ng-repeat="order in orderList">
+                <a ng-click="dtl('{{ order.id }}', '{{ order.orderStatus }}')">
                     <div>
-                        <span class="time">xx年xx月xx日 16:00</span>
-                        <span class="state">状态</span>
+                        <span class="time">{{ order.orderTime }}</span>
+                        <span class="state">{{ order.orderStatus }}</span>
                     </div>
                     <div class="route">
                         <span class="">
                             起点：
                         </span>
-                            <span>
-                            那那那
+                        <span>
+                            {{ order.start }}
                         </span>
                         <div></div>
                         <span class="">
                             终点：
                         </span>
-                            <span>
-                            哪哪哪哪哪
+                        <span>
+                            {{ order.end }}
                         </span>
                     </div>
-                <div>
-                    <span class="cost">xx元</span>
-                    <button class="button button-small button-positive">取消订单</button>
-                </div>
-            </a>
 
+
+                <div>
+                    <span class="cost">{{ order.pay }}元</span>
+                    <button class="button button-small button-positive">{{ order.btn }}</button>
+                </div>
+                </a>
             </ion-item>
         </ion-list>
     </ion-content>
