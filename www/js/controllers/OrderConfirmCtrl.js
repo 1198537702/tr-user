@@ -93,12 +93,12 @@ define(['app'], function (app) {
         orderToSub.pay = $rootScope.newOrder.pay;
         orderToSub.orderTime = newday.toLocaleString();
         orderToSub.userId = $rootScope.user.tell;
-        orderToSub.contactsTell = $scope.contacts.name;
-        orderToSub.contactsName = $scope.contacts.tell;
+        orderToSub.contactsTell = $scope.contacts.tell;
+        orderToSub.contactsName = $scope.contacts.name;
         orderToSub.orderStatus = '派车中';
         $http.post(
           Tool.getOrderSubmitUrl(),
-          JSON.parse(localStorage.getItem('testData')),
+          orderToSub,
           Tool.getPostCfg()
         ).success(function (data) {
           if (data.msg == 'success') {

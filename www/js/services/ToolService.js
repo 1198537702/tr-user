@@ -25,6 +25,9 @@ define(['jquery'], function () {
       getOrderSubmitUrl: function () {
         return host + '/app/newOrder';
       },
+      getConfirmedServicetUrl: function () {
+        return host + '/app/confirmedService';
+      },
       getOrderListURL: function () {
         return host + '/app/userOrderList';
       },
@@ -51,7 +54,7 @@ define(['jquery'], function () {
       setOrderList: function (list) {
         for(var i = 0; i < list.length; i++){
           switch (list[i].orderStatus){
-            case '已完成': list[i].btn = '评价';
+            case '已完成': list[i].btn = ' 评 价 ';
                   break;
             case '派车中': list[i].btn = '取消订单';
                   break;
@@ -59,7 +62,7 @@ define(['jquery'], function () {
                   break;
             case '已取消': list[i].btn = '已取消';
                   break;
-            case '已送达': list[i].btn = '确认签收';
+            case '已送达': list[i].btn = '支付';
                   break;
           }
         }
@@ -100,7 +103,7 @@ define(['jquery'], function () {
         }
 
         var m = parseInt(distance);
-        if (m >= 5000)
+        if (m <= 5000)
           return qibu;
         else {
           var price = qibu + (m - 5000) / 1000 * chao;

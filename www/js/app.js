@@ -215,40 +215,6 @@ define(['controllers/controllers'], function () {
               }
             }
           }
-        })
-
-
-        .state('tabs.search', {
-          url: '/search',
-          views: {
-            'menuContent': {
-              templateUrl: 'templates/search.html'
-            }
-          }
-        })
-
-        .state('tabs.browse', {
-          url: '/browse',
-          views: {
-            'menuContent': {
-              templateUrl: 'templates/browse.html'
-            }
-          }
-        })
-
-
-        .state('tabs.single', {
-          url: '/playlists/:playlistId',
-          views: {
-            'menuContent': {
-              templateUrl: 'templates/playlist.html',
-              controller: 'PlaylistCtrl',
-              resolve: {
-                deps: app.loadControllerJs('./controllers/PlaylistCtrl')
-              }
-
-            }
-          }
         });
       // if none of the above states are matched, use this as the fallback
       $urlRouterProvider.otherwise('/tabs/callCar');

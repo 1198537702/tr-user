@@ -322,14 +322,34 @@ a{text-decoration:none}
   height: 66px;
   width: 66px;
   border-radius: 33px;
+  vertical-align: bottom;
+  flex: none;
+  position: relative;
+  z-index: 2000;
+}
+.me i{
+  line-height: 66px;
+  width: 66px;
+  position: absolute;
+  z-index: 10;
+  display: inline-block;
+  font-size: 50px;
+  text-align: center;
+  color: #919191;
+}
+
+.me ion-item:nth-child(1){
+  display: flex;
 }
 .me .user{
   margin-left: 20px;
   display: inline-block;
   line-height: 66px;
+  flex: 1;
+  font-size: 15px;
 }
 .me .user p{
-  font-size: 18px;
+  font-size: 17px;
 }
 .login .register{
   float: right;
@@ -349,5 +369,8 @@ a{text-decoration:none}
 }
 .login .button-block{
 margin-top: 50px;
+}
+img:not([src]){
+  opacity: 0;
 }
 

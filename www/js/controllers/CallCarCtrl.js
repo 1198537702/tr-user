@@ -8,7 +8,7 @@ define(['app'], function (app) {
     var userStr = '';
     //{time: null, start:"北京", end:"杭州", carType:"金杯", ad:null, remark:"blue"}
     var newOrder;
-    $scope.time = '';
+    $scope.order = {};
     $scope.$on("$ionicView.beforeEnter", function () {
       userStr = localStorage.getItem('user');
       if ($rootScope.newOrder == null) {
@@ -27,7 +27,7 @@ define(['app'], function (app) {
             title: '还没有登录哟'
           });
       } else {
-        $rootScope.newOrder.time = $scope.time;
+        $rootScope.newOrder.time = new Date($scope.order.time).toLocaleString();
         var flage = true;
         for(var key in $rootScope.newOrder){
           if(newOrder[key] == null){
@@ -38,7 +38,7 @@ define(['app'], function (app) {
             break;
           }
         }
-        if(true){
+        if(flage){
           $state.go('tabs.orderConfirm');
         }else {
           $ionicPopup.alert({

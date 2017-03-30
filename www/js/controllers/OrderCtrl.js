@@ -10,11 +10,27 @@ define(['app'], function (app) {
 
 
     $scope.dtl = function (id, status) {
-      if($scope.correntTabs == 'notfinish' && status != '派车中'){
+      if ($scope.correntTabs == 'notfinish' && status != '派车中') {
         $state.go('tabs.orderInProgress', {orderid: id});
-      }else if ($scope.correntTabs == 'finish'){
+      } else if ($scope.correntTabs == 'finish') {
         $state.go('tabs.orderDtail', {orderid: id});
+      } else if (status == '已送达') {
+        $http.post(
+          Tool.getConfirmedServicetUrl(),
+          {
+            'id': id,
+            'finishTime': (new Date()).toLocaleString()
+          },
+          Tool.getPostCfg()
+        ).success(function (data) {
+          $ionicPopup.alert({
+            title: '订单完成'
+          });
+        });
+
+
       }
+
     };
 
 
@@ -45,6 +61,7 @@ define(['app'], function (app) {
       }
 
     }
+
     $scope.turnTabs = turnTabs;
     turnTabs('finish', 'notfinish');
 
